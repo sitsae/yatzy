@@ -43,6 +43,7 @@ class Player {
       for (let i = 0; i < numDicesToThrow; i++) {
         thisThrow.push(Math.floor(Math.random() * 7));
       }
+      this._numThrows ++;
       return thisThrow;
     }
     // denne maa inneholde metode for aa legge til kast i kastteller og unngaa at spiller kaster mer enn tre ganger.

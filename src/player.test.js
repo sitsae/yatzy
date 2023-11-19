@@ -9,6 +9,7 @@ describe("Player", () => {
     player._diceArray = [];
     player._roundScore = 0;
     player._totalScore = 0;
+    player._numThrows = 0;
   });
   describe("throwDice", () => {
     it("returns an array of 6 nums", () => {
@@ -39,6 +40,15 @@ describe("Player", () => {
       const result = player.throwDice();
 
       assert.equal(result, expectedResult);
+    });
+    it("increments numTrows on each successful throw", () => {
+      player.throwDice();
+      player.throwDice();
+
+      const expectedResult = 2;
+      const result = player.numThrows;
+
+      assert.strictEqual(result, expectedResult);
     });
   });
 
