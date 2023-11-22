@@ -14,7 +14,7 @@ export default function ScoreSheet({ styles, playerOneName, playerTwoName }) {
         </thead>
         <tbody>
           <tr>
-            <th style={{ borderBottom: "1px solid black" }}>Ones</th>
+            <th>Ones</th>
             <td></td>
             <td></td>
           </tr>
