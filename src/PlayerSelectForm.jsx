@@ -1,43 +1,39 @@
 import React, { useState } from "react";
 import styles from "./PlayerSelectForm.module.css";
 
-function PlayerSelectForm() {
-  const [playerOneName, setPlayerOneName] = useState("");
-  const [playerTwoName, setPlayerTwoName] = useState("");
-
-  const handleTextChangeP1 = (event) => {
-    return setPlayerOneName(event.target.value);
-  };
-
-  const handleTextChangeP2 = (event) => {
-    return setPlayerTwoName(event.target.value);
-  };
-
+function PlayerSelectForm({
+  // textChangeP1,
+  // textChangeP2,
+  // playerOneName,
+  // playerTwoName,   (trenger ikke disse, men lar de staa for aa poengtere netopp det for meg selv)
+  nameSubmit
+}) {
   return (
-    <>
+    <section>
       <h3>Player names</h3>
-      <form>
+
+      <form onSubmit={nameSubmit}>
         <input
           type="text"
-          name="playerOneName"
+          id="playerOneName"
           placeholder="Player One Name"
-          value={playerOneName}
-          onChange={handleTextChangeP1}
+          // value={playerOneName}
+          // onChange={textChangeP1}
           className={styles.player_input}
         />
         <input
           type="text"
-          name="playerTwoName"
+          id="playerTwoName"
           placeholder="Player Two Name"
-          value={playerTwoName}
-          onChange={handleTextChangeP2}
+          // value={playerTwoName}
+          // onChange={textChangeP2}
           className={styles.player_input}
         />
         <button type="submit" value="submit">
           Submit
         </button>
       </form>
-    </>
+    </section>
   );
 }
 
